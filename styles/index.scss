@@ -104,7 +104,8 @@ $black: #232323;
 // ---------------------------------------------style
 .screen {
   max-width: 1800px;
-  width: 100%;
+  //   width: 100%;
+  //   height: 100vh;
   min-height: 4271px;
   margin: 10px auto;
 
@@ -447,9 +448,14 @@ h3 {
   background-color: #232323;
   @include flex(center, center);
 }
-.footerlogo {
+.fab {
+  color: white;
   max-width: 42px;
   max-height: 42px;
+}
+
+.fab:hover {
+  color: $blue;
 }
 
 .footer-container {
@@ -461,7 +467,6 @@ h3 {
   @include flex(center, center);
 }
 
-.svg:hover,
 a:hover {
   fill: $blue;
 }

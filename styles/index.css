@@ -1,6 +1,5 @@
 .screen {
   max-width: 1800px;
-  width: 100%;
   min-height: 4271px;
   margin: 10px auto;
   display: -webkit-box;
@@ -640,9 +639,14 @@ h3 {
   display: flex;
 }
 
-.footerlogo {
+.fab {
+  color: white;
   max-width: 42px;
   max-height: 42px;
+}
+
+.fab:hover {
+  color: #5474fd;
 }
 
 .footer-container {
@@ -673,7 +677,6 @@ h3 {
   display: flex;
 }
 
-.svg:hover,
 a:hover {
   fill: #5474fd;
 }
