@@ -1,0 +1,497 @@
+$josefin: "Josefin Sans", sans-serif;
+$aleo: "Aleo", serif;
+$blue: #5474fd;
+$grey: #333333;
+$black: #232323;
+// ------------------------------------------------mixin
+@mixin black {
+  background: #232323;
+  mix-blend-mode: normal;
+  opacity: 0.9;
+}
+
+@mixin h2 {
+  font-family: $josefin;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 26px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 6.82px;
+  color: #ffffff;
+}
+
+@mixin flex($justify, $align) {
+  justify-content: $justify;
+  align-items: $align;
+  display: flex;
+}
+
+@mixin just($justify) {
+  justify-content: $justify;
+  display: flex;
+}
+
+@mixin aleo14 {
+  font-family: $aleo;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 26px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 1.4px;
+  color: #ffffff;
+}
+
+@mixin josefin14 {
+  font-family: $josefin;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 26px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 2.8px;
+
+  color: #999999;
+}
+
+@mixin josefin16 {
+  font-family: $josefin;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 26px;
+  color: #e8e8e8;
+}
+@mixin aleo16 {
+  font-family: $aleo;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 26px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 1.2px;
+  color: #ffffff;
+}
+
+@mixin josefin20 {
+  font-family: $josefin;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 26px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+}
+
+@mixin aleo36 {
+  font-family: $aleo;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 26px;
+  color: #ffffff;
+}
+
+// ---------------------------------------------style
+.screen {
+  max-width: 1800px;
+  width: 100%;
+  min-height: 4271px;
+  margin: 10px auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  align-items: strech;
+  box-sizing: border-box;
+}
+
+// --------------------------------------------main
+.main {
+  width: 98%;
+  margin: 0 auto;
+  @include flex(center, center);
+  flex-direction: column;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+// ---------------------------------------------header
+
+.header {
+  max-width: 1770px;
+  width: 100%;
+
+  min-height: 820px;
+
+  margin-right: 0;
+
+  @include flex(center, center);
+
+  background: url(../img/mountain.png) no-repeat;
+}
+
+.header-wrapper {
+  max-width: 653px;
+  width: 100%;
+  margin: auto;
+
+  @include flex(space-around, center);
+  flex-direction: column;
+}
+
+h1 {
+  font-family: $josefin;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 26px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 4.8px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+h2 {
+  @include h2;
+}
+
+.search-container {
+  max-width: 653px;
+  width: 100%;
+  min-height: 60px;
+  width: 100%;
+
+  justify-content: stretch;
+}
+form {
+  display: flex;
+}
+input {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  border: none;
+  @include josefin14;
+}
+
+input::placeholder {
+  @include josefin14;
+}
+
+input:focus {
+  background: rgb(215, 215, 241);
+  border: 2px solid black;
+  outline: none;
+  color: black;
+}
+
+.button-header {
+  max-width: 153px;
+  min-height: 63px;
+  height: 100%;
+  width: 100%;
+  background-color: $blue;
+  border: 2px solid white;
+  color: white;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.fa {
+  color: white;
+  justify-self: flex-end;
+}
+
+button:hover {
+  background: blue;
+}
+
+.header-last {
+  @include flex(center, center);
+  flex-direction: column;
+}
+
+.scroll {
+  @include josefin14;
+
+  text-decoration: none;
+  color: white;
+}
+
+.scroll:hover {
+  color: black;
+}
+
+.fas {
+  color: white;
+}
+
+// ---------------------------------------navigation
+
+.navbar {
+  max-width: 1770px;
+  width: 100%;
+  background-color: $blue;
+  display: flex;
+  justify-content: space-around;
+}
+
+.topnav {
+  @include flex(space-around, center);
+  flex-wrap: wrap;
+  width: 100%;
+  list-style: none;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  font-family: $aleo;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 26px;
+  color: white;
+  margin: 10px;
+}
+
+.topnav a:hover {
+  transform: scale(1.5);
+  color: black;
+}
+.topnav .icon {
+  display: none;
+}
+
+// --------------------------------------------section1
+
+.section1 {
+  max-width: 1770px;
+  width: 100%;
+  min-height: 685px;
+
+  background: url(../img/buildings.png) no-repeat;
+  @include flex(space-evenly, center);
+  flex-wrap: wrap;
+}
+
+.section-left {
+  max-width: 560px;
+  @include flex(space-around, center);
+  flex-direction: column;
+}
+
+h3 {
+  @include aleo36;
+}
+
+.section-text {
+  @include josefin16;
+}
+
+.section-text--1 {
+  letter-spacing: 1.6px;
+}
+
+.section-button {
+  max-width: 228px;
+  min-height: 63px;
+  width: 100%;
+  background-color: $blue;
+  color: white;
+  box-sizing: border-box;
+  letter-spacing: 1.2px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: none;
+  @include aleo16;
+}
+
+.section1-right {
+  max-width: 440px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.amazon {
+  display: flex;
+  justify-self: flex-start;
+}
+
+.mountain {
+  display: flex;
+  align-self: flex-end;
+  margin: 20px;
+}
+
+// --------------------------------------------section2
+
+.section2 {
+  max-width: 1770px;
+  width: 100%;
+  max-height: 700px;
+  height: 100%;
+  background: #333333;
+  @include flex(center, center);
+}
+
+.group {
+  margin: 40px;
+}
+
+// --------------------------------------------section3 and 4
+.section3 {
+  max-width: 1770px;
+  width: 100%;
+  min-height: 700px;
+  height: 100%;
+  background: url(../img/house.png);
+  @include flex(center, center);
+}
+
+.section4 {
+  max-width: 1770px;
+  width: 100%;
+  min-height: 700px;
+  height: 100%;
+  background: url(../img/ocean.png);
+  @include flex(center, center);
+}
+
+.section-content {
+  max-width: 1100px;
+  width: 100%;
+  @include just(flex-start);
+}
+.section-content--4 {
+  max-width: 1100px;
+  width: 100%;
+  @include just(flex-end);
+}
+
+.section-wrapper {
+  max-width: 543px;
+  max-height: 374px;
+  background: #232323;
+  mix-blend-mode: normal;
+  opacity: 0.9;
+  padding: 30px;
+}
+
+.section-heading {
+  @include josefin20();
+}
+
+// --------------------------------------------section5
+
+.section5 {
+  max-width: 1770px;
+  width: 100%;
+  min-height: 731px;
+  height: 100%;
+  background: url(../img/man-opacity.png);
+  @include flex(center, center);
+  flex-direction: column;
+}
+
+.section5-content {
+  @include flex(center, center);
+  max-height: 287px;
+}
+
+.section-wrapper--5 {
+  max-width: 668px;
+  max-height: 287px;
+  padding: 30px;
+  box-sizing: border-box;
+  @include flex(center, flex-start);
+  flex-direction: column; //   max-height: 287px;;
+}
+
+.man {
+  max-height: 287px;
+}
+
+.citat {
+  height: 26px;
+}
+
+// --------------------------------------------footer
+
+.footer {
+  max-width: 1773px;
+  min-height: 271px;
+  height: 100%;
+  width: 100%;
+  background-color: #232323;
+  @include flex(center, center);
+}
+.footerlogo {
+  max-width: 42px;
+  max-height: 42px;
+}
+
+.footer-container {
+  @include flex(center, center);
+  flex-direction: column;
+}
+
+.logo-container {
+  @include flex(center, center);
+}
+
+.svg:hover,
+a:hover {
+  fill: $blue;
+}
+
+// --------------------------------------------media
+
+@media screen and (max-width: 800px) {
+  .navbar {
+    height: 100%;
+  }
+  .topnav {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+    // @include just(flex-end);
+  }
+
+  .topnav.responsive {
+    position: relative;
+  }
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
