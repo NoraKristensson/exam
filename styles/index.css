@@ -1,29 +1,33 @@
 .screen {
-  max-width: 1800px;
-  min-height: 4271px;
-  margin: 10px auto;
+  width: 100%;
+  height: 100vh;
+  margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: strech;
-      -ms-flex-align: strech;
-          align-items: strech;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .main {
-  width: 98%;
-  margin: 0 auto;
+  max-width: 1800px;
+  min-width: 335px;
+  width: 100%;
+  padding: 15px;
+  max-height: 4271px;
+  border: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.header {
+  min-height: 820px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -37,35 +41,32 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  background: url(../img/mountain.png) no-repeat center;
+  background-size: cover;
 }
 
-.header {
-  max-width: 1770px;
+.header-wrapper {
   width: 100%;
-  min-height: 820px;
-  margin-right: 0;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  min-height: 341px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background: url(../img/mountain.png) no-repeat;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.header-wrapper {
-  max-width: 653px;
-  width: 100%;
-  margin: auto;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+.header__heading {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -114,19 +115,22 @@ h2 {
 }
 
 .search-container {
-  max-width: 653px;
-  width: 100%;
-  min-height: 60px;
-  width: 100%;
-  -webkit-box-pack: stretch;
-      -ms-flex-pack: stretch;
-          justify-content: stretch;
+  min-width: 653px;
+  min-height: 63px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
 form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 80%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 input {
@@ -220,16 +224,11 @@ input:focus {
   color: black;
 }
 
-.button-header {
-  max-width: 153px;
+.button {
   min-height: 63px;
-  height: 100%;
-  width: 100%;
   background-color: #5474fd;
-  border: 2px solid white;
+  width: 228px;
   color: white;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -239,6 +238,26 @@ input:focus {
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  letter-spacing: 1.2px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Aleo", serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 26px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 1.2px;
+  color: #ffffff;
+  border: none;
+}
+
+.button--header {
+  width: 20%;
+  border: 2px solid white;
 }
 
 .fa {
@@ -247,7 +266,7 @@ input:focus {
 }
 
 button:hover {
-  background: blue;
+  background: #41418d;
 }
 
 .header-last {
@@ -281,12 +300,15 @@ button:hover {
   text-align: center;
   letter-spacing: 2.8px;
   color: #999999;
+  cursor: pointer;
   text-decoration: none;
   color: white;
 }
 
 .scroll:hover {
-  color: black;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  color: #5474fd;
 }
 
 .fas {
@@ -294,9 +316,14 @@ button:hover {
 }
 
 .navbar {
-  max-width: 1770px;
   width: 100%;
-  background-color: #5474fd;
+  background: #5474fd center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -316,11 +343,14 @@ button:hover {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   width: 100%;
+  min-height: 83px;
   list-style: none;
   overflow: hidden;
+  -webkit-padding-start: 0px;
+          padding-inline-start: 0px;
 }
 
-a {
+.navlink {
   text-decoration: none;
   font-family: "Aleo", serif;
   font-style: normal;
@@ -329,23 +359,25 @@ a {
   line-height: 26px;
   color: white;
   margin: 10px;
+  display: block;
 }
 
-.topnav a:hover {
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
+.navlink:hover,
+li:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
   color: black;
 }
 
-.topnav .icon {
+.icon {
   display: none;
 }
 
 .section1 {
-  max-width: 1770px;
   width: 100%;
   min-height: 685px;
   background: url(../img/buildings.png) no-repeat;
+  background-size: cover;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
@@ -355,17 +387,16 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
 }
 
 .section-left {
   max-width: 560px;
+  margin: 0 3px;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -397,38 +428,9 @@ h3 {
   letter-spacing: 1.6px;
 }
 
-.section-button {
-  max-width: 228px;
-  min-height: 63px;
-  width: 100%;
-  background-color: #5474fd;
-  color: white;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  letter-spacing: 1.2px;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  border: none;
-  font-family: "Aleo", serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 26px;
-  display: flex;
-  align-items: center;
-  letter-spacing: 1.2px;
-  color: #ffffff;
-}
-
 .section1-right {
   max-width: 440px;
+  margin: 0 3px;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -447,6 +449,10 @@ h3 {
   display: -ms-flexbox;
   display: flex;
   justify-self: flex-start;
+  margin-bottom: 20px;
+  margin-right: 5px;
+  max-width: 100%;
+  height: auto;
 }
 
 .mountain {
@@ -455,13 +461,13 @@ h3 {
   display: flex;
   -ms-flex-item-align: end;
       align-self: flex-end;
-  margin: 20px;
+  max-width: 100%;
+  height: auto;
 }
 
 .section2 {
-  max-width: 1770px;
   width: 100%;
-  max-height: 700px;
+  max-height: 340px;
   height: 100%;
   background: #333333;
   -webkit-box-pack: center;
@@ -476,15 +482,16 @@ h3 {
 }
 
 .group {
-  margin: 40px;
+  max-width: 100%;
+  height: auto;
+  margin-right: 30px;
 }
 
 .section3 {
-  max-width: 1770px;
   width: 100%;
   min-height: 700px;
-  height: 100%;
-  background: url(../img/house.png);
+  background: url(../img/house.png) no-repeat center;
+  background-size: cover;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -497,11 +504,10 @@ h3 {
 }
 
 .section4 {
-  max-width: 1770px;
   width: 100%;
   min-height: 700px;
-  height: 100%;
-  background: url(../img/ocean.png);
+  background: url(../img/ocean.png) no-repeat center;
+  background-size: cover;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -560,14 +566,14 @@ h3 {
 }
 
 .section5 {
-  max-width: 1770px;
   width: 100%;
   min-height: 731px;
   height: 100%;
-  background: url(../img/man-opacity.png);
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  background: url(../img/man-opacity.png) no-repeat;
+  background-size: cover;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -578,6 +584,8 @@ h3 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .section5-content {
@@ -596,7 +604,6 @@ h3 {
 .section-wrapper--5 {
   max-width: 668px;
   max-height: 287px;
-  padding: 30px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -webkit-box-pack: center;
@@ -614,8 +621,13 @@ h3 {
           flex-direction: column;
 }
 
+.section-text--5 {
+  background: transparent;
+}
+
 .man {
-  max-height: 287px;
+  max-width: 100%;
+  height: auto;
 }
 
 .citat {
@@ -665,31 +677,153 @@ h3 {
           flex-direction: column;
 }
 
-.logo-container {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+a {
+  margin: 0 10px;
 }
 
 a:hover {
   fill: #5474fd;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (min-height: 500px) and (max-width: 1100px) {
+  .header {
+    min-height: 650px;
+    background-position: left;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .header-wrapper {
+    min-height: 450px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .search-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    min-width: 100%;
+  }
+  form {
+    width: 100%;
+    min-height: 63px;
+  }
+  .button--header {
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .fa {
+    margin: 10px;
+  }
+  .section2 {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .section-content {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .mountain {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+  .section5 {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .section5-content {
+    -ms-flex-wrap: wrap-reverse;
+        flex-wrap: wrap-reverse;
+    margin-bottom: 20px;
+  }
+  .section-wrapper--5 {
+    background: transparent;
+    border-bottom: 20px;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .screen {
+    margin: 1px;
+    display: block;
+  }
+  .main {
+    padding: 0;
+  }
+  .header {
+    min-height: 320px;
+    background: #5474fd;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .header-wrapper {
+    background: url(../img/mountain.png) no-repeat;
+    background-size: cover;
+    max-width: 100%;
+  }
+  .search-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    min-width: 100%;
+  }
+  form {
+    width: 100%;
+    min-height: 63px;
+  }
+  .button-header {
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
   .navbar {
-    height: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
   .topnav {
+    min-height: 60px;
+    -webkit-padding-start: 0px;
+            padding-inline-start: 0px;
+  }
+  .navlink {
     display: none;
   }
-  .topnav a.icon {
-    float: right;
+  .topnav .icon {
     display: block;
   }
   .topnav.responsive {
@@ -697,13 +831,83 @@ a:hover {
   }
   .topnav.responsive .icon {
     position: absolute;
-    right: 0;
-    top: 0;
   }
-  .topnav.responsive a {
-    float: none;
+  .topnav.responsive .navlink {
     display: block;
-    text-align: left;
+  }
+  .section1 {
+    -ms-flex-wrap: wrap-reverse;
+        flex-wrap: wrap-reverse;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .section1-right {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .amazon {
+    max-width: 60%;
+  }
+  .mountain {
+    max-width: 60%;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .section2 {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .man {
+    max-width: 80%;
+    height: auto;
+  }
+  h3 {
+    font-family: "Josefin Sans", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 26px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: #ffffff;
+  }
+  .section5 {
+    min-height: 600px;
+  }
+  .section-wrapper--5 {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .section-heading--5 {
+    margin-bottom: 10px;
+  }
+  .man {
+    max-width: 60%;
+    height: auto;
   }
 }
 /*# sourceMappingURL=index.css.map */

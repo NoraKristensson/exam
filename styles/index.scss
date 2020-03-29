@@ -101,53 +101,46 @@ $black: #232323;
   color: #ffffff;
 }
 
-// ---------------------------------------------style
+// -------------------------------------------------------------style
 .screen {
-  max-width: 1800px;
-  //   width: 100%;
-  //   height: 100vh;
-  min-height: 4271px;
-  margin: 10px auto;
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
 
+// --------------------------------------------------------------------main
+.main {
+  max-width: 1800px;
+  min-width: 335px;
+  width: 100%;
+  padding: 15px;
+  max-height: 4271px;
+  border: 1px solid black;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  flex-wrap: wrap;
-  align-items: strech;
-  box-sizing: border-box;
 }
 
-// --------------------------------------------main
-.main {
-  width: 98%;
-  margin: 0 auto;
-  @include flex(center, center);
-  flex-direction: column;
-  flex-wrap: wrap;
-  box-sizing: border-box;
-}
-
-// ---------------------------------------------header
+// ------------------------------------------------------------------header
 
 .header {
-  max-width: 1770px;
-  width: 100%;
-
   min-height: 820px;
-
-  margin-right: 0;
-
   @include flex(center, center);
-
-  background: url(../img/mountain.png) no-repeat;
+  flex-direction: column;
+  background: url(../img/mountain.png) no-repeat center;
+  background-size: cover;
 }
 
 .header-wrapper {
-  max-width: 653px;
   width: 100%;
-  margin: auto;
+  min-height: 341px;
+  @include flex(space-between, center);
+  flex-direction: column;
+}
 
-  @include flex(space-around, center);
+.header__heading {
+  @include flex(center, center);
   flex-direction: column;
 }
 
@@ -170,15 +163,15 @@ h2 {
 }
 
 .search-container {
-  max-width: 653px;
-  width: 100%;
-  min-height: 60px;
-  width: 100%;
-
-  justify-content: stretch;
+  min-width: 653px;
+  min-height: 63px;
+  display: flex;
+  align-content: center;
 }
 form {
   display: flex;
+  width: 80%;
+  flex-wrap: wrap;
 }
 input {
   display: flex;
@@ -200,19 +193,25 @@ input:focus {
   color: black;
 }
 
-.button-header {
-  max-width: 153px;
+.button {
   min-height: 63px;
-  height: 100%;
-  width: 100%;
   background-color: $blue;
-  border: 2px solid white;
+  width: 228px;
   color: white;
-  box-sizing: border-box;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  flex-wrap: wrap;
+  letter-spacing: 1.2px;
+  box-sizing: border-box;
+  @include aleo16;
+  border: none;
+}
+
+.button--header {
+  width: 20%;
+  border: 2px solid white;
 }
 
 .fa {
@@ -221,7 +220,7 @@ input:focus {
 }
 
 button:hover {
-  background: blue;
+  background: rgb(65, 65, 141);
 }
 
 .header-last {
@@ -231,26 +230,26 @@ button:hover {
 
 .scroll {
   @include josefin14;
-
+  cursor: pointer;
   text-decoration: none;
   color: white;
 }
 
 .scroll:hover {
-  color: black;
+  transform: scale(1.5);
+  color: $blue;
 }
 
 .fas {
   color: white;
 }
 
-// ---------------------------------------navigation
+// ------------------------------------------------------------navigation
 
 .navbar {
-  max-width: 1770px;
   width: 100%;
-  background-color: $blue;
-  display: flex;
+  background: $blue center;
+  @include flex(center, center);
   justify-content: space-around;
 }
 
@@ -258,11 +257,13 @@ button:hover {
   @include flex(space-around, center);
   flex-wrap: wrap;
   width: 100%;
+  min-height: 83px;
   list-style: none;
   overflow: hidden;
+  padding-inline-start: 0px;
 }
 
-a {
+.navlink {
   text-decoration: none;
   font-family: $aleo;
   font-style: normal;
@@ -271,31 +272,32 @@ a {
   line-height: 26px;
   color: white;
   margin: 10px;
+  display: block;
 }
 
-.topnav a:hover {
-  transform: scale(1.5);
+.navlink:hover,
+li:hover {
+  transform: scale(1.1);
   color: black;
 }
-.topnav .icon {
+.icon {
   display: none;
 }
 
-// --------------------------------------------section1
+// -----------------------------------------------------------section1
 
 .section1 {
-  max-width: 1770px;
   width: 100%;
   min-height: 685px;
-
   background: url(../img/buildings.png) no-repeat;
+  background-size: cover;
   @include flex(space-evenly, center);
-  flex-wrap: wrap;
 }
 
 .section-left {
   max-width: 560px;
-  @include flex(space-around, center);
+  margin: 0 3px;
+  @include flex(space-around, flex-start);
   flex-direction: column;
 }
 
@@ -311,24 +313,9 @@ h3 {
   letter-spacing: 1.6px;
 }
 
-.section-button {
-  max-width: 228px;
-  min-height: 63px;
-  width: 100%;
-  background-color: $blue;
-  color: white;
-  box-sizing: border-box;
-  letter-spacing: 1.2px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  border: none;
-  @include aleo16;
-}
-
 .section1-right {
   max-width: 440px;
+  margin: 0 3px;
   width: 100%;
   display: flex;
   align-items: flex-start;
@@ -338,45 +325,50 @@ h3 {
 .amazon {
   display: flex;
   justify-self: flex-start;
+  margin-bottom: 20px;
+  margin-right: 5px;
+  max-width: 100%;
+  height: auto;
 }
 
 .mountain {
   display: flex;
   align-self: flex-end;
-  margin: 20px;
+  max-width: 100%;
+  height: auto;
 }
 
-// --------------------------------------------section2
+// ------------------------------------------------------------section2
 
 .section2 {
-  max-width: 1770px;
   width: 100%;
-  max-height: 700px;
+  max-height: 340px;
   height: 100%;
   background: #333333;
   @include flex(center, center);
 }
 
 .group {
-  margin: 40px;
+  max-width: 100%;
+  height: auto;
+  margin-right: 30px;
 }
 
-// --------------------------------------------section3 and 4
+// -------------------------------------------------------------section 3
+// -------------------------------------------------------------section 4
 .section3 {
-  max-width: 1770px;
   width: 100%;
   min-height: 700px;
-  height: 100%;
-  background: url(../img/house.png);
+  background: url(../img/house.png) no-repeat center;
+  background-size: cover;
   @include flex(center, center);
 }
 
 .section4 {
-  max-width: 1770px;
   width: 100%;
   min-height: 700px;
-  height: 100%;
-  background: url(../img/ocean.png);
+  background: url(../img/ocean.png) no-repeat center;
+  background-size: cover;
   @include flex(center, center);
 }
 
@@ -394,9 +386,7 @@ h3 {
 .section-wrapper {
   max-width: 543px;
   max-height: 374px;
-  background: #232323;
-  mix-blend-mode: normal;
-  opacity: 0.9;
+  @include black;
   padding: 30px;
 }
 
@@ -404,16 +394,17 @@ h3 {
   @include josefin20();
 }
 
-// --------------------------------------------section5
+// --------------------------------------------------------------section5
 
 .section5 {
-  max-width: 1770px;
   width: 100%;
   min-height: 731px;
   height: 100%;
-  background: url(../img/man-opacity.png);
-  @include flex(center, center);
+  background: url(../img/man-opacity.png) no-repeat;
+  background-size: cover;
+  @include flex(space-evenly, center);
   flex-direction: column;
+  box-sizing: border-box;
 }
 
 .section5-content {
@@ -424,21 +415,25 @@ h3 {
 .section-wrapper--5 {
   max-width: 668px;
   max-height: 287px;
-  padding: 30px;
   box-sizing: border-box;
   @include flex(center, flex-start);
-  flex-direction: column; //   max-height: 287px;;
+  flex-direction: column;
+}
+
+.section-text--5 {
+  background: transparent;
 }
 
 .man {
-  max-height: 287px;
+  max-width: 100%;
+  height: auto;
 }
 
 .citat {
   height: 26px;
 }
 
-// --------------------------------------------footer
+// ------------------------------------------------------------footer
 
 .footer {
   max-width: 1773px;
@@ -463,8 +458,8 @@ h3 {
   flex-direction: column;
 }
 
-.logo-container {
-  @include flex(center, center);
+a {
+  margin: 0 10px;
 }
 
 a:hover {
@@ -473,17 +468,115 @@ a:hover {
 
 // --------------------------------------------media
 
-@media screen and (max-width: 800px) {
-  .navbar {
-    height: 100%;
+@media screen and (min-height: 500px) and (max-width: 1100px) {
+  .header {
+    min-height: 650px;
+    background-position: left;
+    @include flex(flex-end, center);
   }
+  .header-wrapper {
+    min-height: 450px;
+    justify-content: space-around;
+  }
+  .search-container {
+    flex-direction: column;
+    min-width: 100%;
+  }
+
+  form {
+    width: 100%;
+    min-height: 63px;
+  }
+
+  .button--header {
+    width: 100%;
+    justify-content: center;
+  }
+  .fa {
+    margin: 10px;
+  }
+
+  .section2 {
+    @include flex(flex-start, center);
+  }
+
+  .section-content {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .mountain {
+    align-self: flex-start;
+  }
+
+  .section5 {
+    justify-content: space-between;
+  }
+
+  .section5-content {
+    flex-wrap: wrap-reverse;
+    margin-bottom: 20px;
+  }
+
+  .section-wrapper--5 {
+    background: transparent;
+    border-bottom: 20px;
+
+    justify-content: flex-end;
+  }
+}
+// ----------------------------------------media----499
+@media screen and (max-width: 499px) {
+  .screen {
+    margin: 1px;
+    display: block;
+  }
+
+  .main {
+    padding: 0;
+  }
+  .header {
+    min-height: 320px;
+    background: $blue;
+    @include flex(flex-start, center);
+  }
+
+  .header-wrapper {
+    background: url(../img/mountain.png) no-repeat;
+    background-size: cover;
+    max-width: 100%;
+  }
+
+  .search-container {
+    flex-direction: column;
+    min-width: 100%;
+  }
+
+  form {
+    width: 100%;
+    min-height: 63px;
+  }
+
+  .button-header {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .navbar {
+    flex-direction: row;
+  }
+
   .topnav {
+    min-height: 60px;
+    padding-inline-start: 0px;
+  }
+
+  .navlink {
     display: none;
   }
-  .topnav a.icon {
-    float: right;
+  .topnav .icon {
     display: block;
-    // @include just(flex-end);
   }
 
   .topnav.responsive {
@@ -491,12 +584,56 @@ a:hover {
   }
   .topnav.responsive .icon {
     position: absolute;
-    right: 0;
-    top: 0;
   }
-  .topnav.responsive a {
-    float: none;
+  .topnav.responsive .navlink {
     display: block;
-    text-align: left;
+  }
+
+  .section1 {
+    flex-wrap: wrap-reverse;
+    @include flex(center, center);
+  }
+
+  .section1-right {
+    justify-content: center;
+    align-items: center;
+  }
+  .amazon {
+    max-width: 60%;
+  }
+
+  .mountain {
+    max-width: 60%;
+    align-self: center;
+  }
+
+  .section2 {
+    @include flex(flex-start, center);
+  }
+
+  .man {
+    max-width: 80%;
+    height: auto;
+  }
+
+  h3 {
+    @include josefin20;
+  }
+
+  .section5 {
+    min-height: 600px;
+  }
+
+  .section-wrapper--5 {
+    justify-content: flex-end;
+  }
+
+  .section-heading--5 {
+    margin-bottom: 10px;
+  }
+
+  .man {
+    max-width: 60%;
+    height: auto;
   }
 }
